@@ -15,3 +15,9 @@ body {
 .d_none {
   display: none;
 }
+
+@media (max-width: 800px) {
+  body {
+    padding: 16px;
+  }
+}
