@@ -1,16 +1,30 @@
+async function renderNotes() {
+  toggleOverlay();
+  cleanDisplayedNotes();
+  await showNotes();
+  toggleOverlay();
+}
+
 async function showNotes() {
   let myNotes = await getNotesCall();
   renderNotesToCategory(myNotes);
 }
 
-function renderNotesToCategory(notesArray) {
-  let container = document.getElementById("notesDisplay");
-  container.innerHTML = "";
-  let filteredNotes = notesArray.filter((note) => note.category === displayCategory);
+function renderNotesToCategory(myNotes) {
+  cleanDisplayedNotes();
+  let filteredNotes = myNotes.filter((note) => note.category === displayCategory);
+  ifNoNotes(filteredNotes);
+  ifNotesAvailable(filteredNotes);
+}
+
+function ifNoNotes(filteredNotes) {
   if (filteredNotes.length === 0) {
     noNotesNotification();
     return;
   }
+}
+
+function ifNotesAvailable(filteredNotes) {
   filteredNotes.forEach((note) => {
     switch (displayCategory) {
       case "active":
@@ -27,49 +41,9 @@ function renderNotesToCategory(notesArray) {
 }
 
 function cleanDisplayedNotes() {
-  document.getElementById("notesDisplay").innerHTML = "";
-}
-
-function buttonStatus(status) {
-  document.getElementById("createButton").disabled = status;
-}
-
-async function renderNotes() {
-  toggleOverlay();
-  cleanDisplayedNotes();
-  await showNotes();
-  toggleOverlay();
-}
-
-function countCategories(myNotes) {
-  let active = 0;
-  let trash = 0;
-  let archive = 0;
-  for (let note of myNotes) {
-    if (note.category === "active") {
-      active++;
-    } else if (note.category === "trash") {
-      trash++;
-    } else if (note.category === "archive") {
-      archive++;
-    }
-  }
-  return { active, trash, archive };
-}
-
-function showNoNotesNotification(myNotes) {
-  let { active, trash, archive } = countCategories(myNotes);
-  confirmOccurence(active);
-  confirmOccurence(trash);
-  confirmOccurence(archive);
+  container.innerHTML = "";
 }
 
 function noNotesNotification() {
-  document.getElementById("notesDisplay").innerHTML = noNotes();
-}
-
-function confirmOccurence(count) {
-  if (count === 0) {
-    noNotesNotification();
-  }
+  container.innerHTML = noNotes();
 }

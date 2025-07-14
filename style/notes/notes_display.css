@@ -19,4 +19,5 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  padding: 0 16px;
 }

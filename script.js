@@ -1,7 +1,7 @@
-let displayCategory = "active";
-
-function toggleOverlay() {
-  document.getElementById("overlay").classList.toggle("d_none");
+function onInit() {
+  setVariables();
+  renderNotes();
+  focusCategory();
 }
 
 function formatDate(isoString) {
@@ -13,8 +13,22 @@ function formatDate(isoString) {
 }
 
 async function changeCategory(category) {
+  focusCategory();
   toggleOverlay();
+  await notesProcess(category);
+  toggleOverlay();
+  focusCategory();
+}
+
+async function notesProcess(category) {
   displayCategory = category;
   await showNotes();
-  toggleOverlay();
+}
+
+function focusCategory() {
+  document.getElementById(displayCategory).classList.toggle("buttonFocus");
+}
+
+function toggleOverlay() {
+  document.getElementById("overlay").classList.toggle("d_none");
 }

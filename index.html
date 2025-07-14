@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="/style/overlay.css" />
   </head>
-  <body onload="renderNotes()">
+  <body onload="onInit()">
     <div id="overlay" class="overlayContainer d_none"></div>
     <div class="allNotes">
       <section class="createNote">
@@ -39,9 +39,9 @@
       </section>
       <main>
         <div class="sidebar">
-          <button class="notesCategory" onclick="changeCategory('active')">My Notes</button>
-          <button class="notesCategory" onclick="changeCategory('archive')">Archive</button>
-          <button class="notesCategory" onclick="changeCategory('trash')">Trash</button>
+          <button id="active" class="notesCategory" onclick="changeCategory('active')">My Notes</button>
+          <button id="archive" class="notesCategory" onclick="changeCategory('archive')">Archive</button>
+          <button id="trash" class="notesCategory" onclick="changeCategory('trash')">Trash</button>
         </div>
         <div class="categorySections">
           <section class="notes">

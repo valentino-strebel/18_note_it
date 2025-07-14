@@ -24,7 +24,7 @@
   background-color: #1e6fff;
 }
 
-.sidebar button:focus {
-  font-weight: 800;
-  background-color: #dcebff;
+.buttonFocus {
+  font-weight: 800 !important;
+  background-color: #dcebff !important;
 }
