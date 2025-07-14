@@ -3,8 +3,8 @@ function notesTrash(myNotes) {
 
   return `
     <div class="notesContainer">
-      <h1 class="noteHeadline">${myNotes.title}</h1>
-      <p class="noteContent">${myNotes.content}</p>
+      <h1 id="title-${myNotes.id}" class="noteHeadline">${myNotes.title}</h1>
+      <p id="content-${myNotes.id}" class="noteContent">${myNotes.content}</p>
       <p class="creationDate">${date}</p>
       <div class="noteButtons">
         <button class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')">
