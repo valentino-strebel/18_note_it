@@ -4,7 +4,6 @@ async function getNotesCall() {
     const response = await fetch(DATA_URL);
     if (!response.ok) throw new Error("Failed to fetch notes");
     const myNotes = await response.json();
-    console.log(myNotes);
     return myNotes;
   } catch (error) {
     console.error("Failed to fetch data", error);

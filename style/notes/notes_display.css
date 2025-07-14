@@ -1,0 +1,17 @@
+.allNotes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notesDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

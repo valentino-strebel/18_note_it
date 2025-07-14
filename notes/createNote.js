@@ -29,9 +29,11 @@ function checkInputValue(noteTitle, noteContent) {
 }
 
 async function renderNewNote() {
+  toggleOverlay();
   buttonStatus(true);
   await prepareNewNote();
   deleteNoteInput();
   renderNotes();
   buttonStatus(false);
+  toggleOverlay();
 }

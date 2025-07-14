@@ -3,36 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Note It</title>
     <script src="script.js"></script>
     <script src="/data/variables.js"></script>
     <script src="/data/serverData.js"></script>
     <script src="/notes/createNote.js"></script>
     <script src="/notes/deleteNote.js"></script>
     <script src="/notes/categoryNote.js"></script>
+    <script src="/notes/showNote.js"></script>
 
     <script src="./templates/notes_displayed.template.js"></script>
     <script src="./templates/notes_archive.template.js"></script>
     <script src="./templates/notes_trash.template.js"></script>
+    <script src="./templates/no_notes.template.js"></script>
 
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="/style/notes/notes_details.css" />
+    <link rel="stylesheet" href="/style/notes/notes_display.css" />
+    <link rel="stylesheet" href="/style/notes/create_note.css" />
+
+    <link rel="stylesheet" href="/style/overlay.css" />
   </head>
   <body onload="renderNotes()">
-    <div class="createNote">
-      <input id="title" type="text" />
-      <input id="content" type="text" />
-      <button id="createButton" onclick="renderNewNote()">Create Note</button>
+    <div id="overlay" class="overlayContainer d_none"></div>
+    <div class="allNotes">
+      <section class="createNote">
+        <p>Title</p>
+        <input id="title" type="text" placeholder="Please enter a title" />
+        <p>Note</p>
+        <textarea row="5" id="content" placeholder="Enter your note..."></textarea>
+        <div class="creatButtonContainer">
+          <button id="createButton" onclick="renderNewNote()">Create Note</button>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h1>My Notes</h1>
+        <div class="notesDisplay" id="notesDisplay"></div>
+      </section>
+
+      <section class="notes">
+        <h1>Archive</h1>
+        <div class="notesDisplay" id="notesArchive"></div>
+      </section>
+
+      <section class="notes">
+        <h1>Trash Can</h1>
+        <div class="notesDisplay" id="notesTrash"></div>
+      </section>
     </div>
-
-    <section class="activeNotes">
-      <h1>My Notes</h1>
-      <div class="notesDisplay" id="notesDisplay"></div>
-    </section>
-
-    <section class="archiveNotes"><h1>Archive</h1></section>
-    <div class="notesDisplay" id="notesArchive"></div>
-
-    <section class="deleteNotes"><h1>Trash Can</h1></section>
-    <div class="notesDisplay" id="notesTrash"></div>
   </body>
 </html>

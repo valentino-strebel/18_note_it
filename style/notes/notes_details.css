@@ -1,0 +1,53 @@
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  width: 200px;
+  border-radius: 24px;
+  border: solid 2px red;
+}
+
+.notesContainer h1 {
+  font-size: 26px;
+}
+
+.notesContainer p {
+  font-size: 24px;
+}
+
+.noteButtons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.noteButtons button {
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noteButtons button.delete {
+  background-color: red;
+}
+
+.noteButtons button.trash {
+  background-color: orangered;
+}
+
+.noteButtons button.edit {
+  background-color: lightblue;
+}
+
+.noteButtons button.active {
+  background-color: greenyellow;
+}
+
+.noteButtons button.archive {
+  background-color: violet;
+}
