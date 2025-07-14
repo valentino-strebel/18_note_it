@@ -3,7 +3,7 @@ function notesDisplay(myNotes) {
   return `
     <div class="notesContainer">
       <h1 class="noteHeadline">${myNotes.title}</h1>
-      <p>${myNotes.content}</p>
+      <p class="noteContent">${myNotes.content}</p>
       <p class="creationDate">${date}</p>
       <div class="noteButtons">
         <button class="edit" onclick="editNote('${myNotes.id}')">
