@@ -10,6 +10,12 @@
   gap: 16px;
 }
 
+.notes h1 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e6fff;
+}
+
 .notesDisplay {
   display: flex;
   flex-wrap: wrap;

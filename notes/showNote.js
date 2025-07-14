@@ -3,6 +3,7 @@ async function showNotes() {
   showNoNotesNotification(myNotes);
   for (let index = 0; index < myNotes.length; index++) {
     let element = myNotes[index];
+    console.log(element);
     renderNotesToCategory(element);
   }
 }

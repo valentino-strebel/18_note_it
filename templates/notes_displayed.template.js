@@ -1,8 +1,10 @@
 function notesDisplay(myNotes) {
+  let date = formatDate(myNotes.created);
   return `
     <div class="notesContainer">
-      <h1>${myNotes.title}</h1>
+      <h1 class="noteHeadline">${myNotes.title}</h1>
       <p>${myNotes.content}</p>
+      <p class="creationDate">${date}</p>
       <div class="noteButtons">
         <button class="edit" onclick="editNote('${myNotes.id}')">
           <img src="./assets/img/note_icons/edit.svg" alt="Button to begin editing note" />

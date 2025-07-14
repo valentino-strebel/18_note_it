@@ -1,8 +1,11 @@
 function notesTrash(myNotes) {
+  let date = formatDate(myNotes.created);
+
   return `
     <div class="notesContainer">
-      <h1>${myNotes.title}</h1>
+      <h1 class="noteHeadline">${myNotes.title}</h1>
       <p>${myNotes.content}</p>
+      <p class="creationDate">${date}</p>
       <div class="noteButtons">
         <button class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')">
           <img src="./assets/img/note_icons/restore.svg" alt="Icon to move note to archive" />
