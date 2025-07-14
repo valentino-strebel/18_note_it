@@ -1,0 +1,30 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  padding: 24px 16px;
+  background-color: #f5f9ff;
+}
+
+.sidebar button {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e3a8a;
+  background-color: #f5f9ff;
+  border-style: none;
+  padding: 12px 16px;
+  text-align: start;
+}
+
+.sidebar button:hover {
+  background-color: #dcebff;
+}
+
+.sidebar button:active {
+  background-color: #1e6fff;
+}
+
+.sidebar button:focus {
+  font-weight: 800;
+  background-color: #dcebff;
+}

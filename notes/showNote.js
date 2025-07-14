@@ -1,31 +1,33 @@
 async function showNotes() {
   let myNotes = await getNotesCall();
-  showNoNotesNotification(myNotes);
-  for (let index = 0; index < myNotes.length; index++) {
-    let element = myNotes[index];
-    console.log(element);
-    renderNotesToCategory(element);
-  }
+  renderNotesToCategory(myNotes);
 }
 
-function renderNotesToCategory(element) {
-  switch (element.category) {
-    case "active":
-      document.getElementById("notesDisplay").innerHTML += notesDisplay(element);
-      break;
-    case "trash":
-      document.getElementById("notesTrash").innerHTML += notesTrash(element);
-      break;
-    case "archive":
-      document.getElementById("notesArchive").innerHTML += notesArchive(element);
-      break;
+function renderNotesToCategory(notesArray) {
+  let container = document.getElementById("notesDisplay");
+  container.innerHTML = "";
+  let filteredNotes = notesArray.filter((note) => note.category === displayCategory);
+  if (filteredNotes.length === 0) {
+    noNotesNotification();
+    return;
   }
+  filteredNotes.forEach((note) => {
+    switch (displayCategory) {
+      case "active":
+        container.innerHTML += notesDisplay(note);
+        break;
+      case "trash":
+        container.innerHTML += notesTrash(note);
+        break;
+      case "archive":
+        container.innerHTML += notesArchive(note);
+        break;
+    }
+  });
 }
 
 function cleanDisplayedNotes() {
   document.getElementById("notesDisplay").innerHTML = "";
-  document.getElementById("notesArchive").innerHTML = "";
-  document.getElementById("notesTrash").innerHTML = "";
 }
 
 function buttonStatus(status) {
@@ -57,17 +59,17 @@ function countCategories(myNotes) {
 
 function showNoNotesNotification(myNotes) {
   let { active, trash, archive } = countCategories(myNotes);
-  confirmOccurence(active, "notesDisplay");
-  confirmOccurence(trash, "notesTrash");
-  confirmOccurence(archive, "notesArchive");
+  confirmOccurence(active);
+  confirmOccurence(trash);
+  confirmOccurence(archive);
 }
 
-function noNotesNotification(category) {
-  document.getElementById(category).innerHTML = noNotes();
+function noNotesNotification() {
+  document.getElementById("notesDisplay").innerHTML = noNotes();
 }
 
-function confirmOccurence(count, category) {
+function confirmOccurence(count) {
   if (count === 0) {
-    noNotesNotification(category);
+    noNotesNotification();
   }
 }

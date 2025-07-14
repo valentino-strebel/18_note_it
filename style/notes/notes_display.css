@@ -4,16 +4,15 @@
   gap: 24px;
 }
 
+.categorySections {
+  display: flex;
+  flex-direction: column;
+}
+
 .notes {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.notesCategories {
-  font-size: 16px;
-  font-weight: 500;
-  color: #1e6fff;
 }
 
 .notesDisplay {
