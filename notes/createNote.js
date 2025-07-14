@@ -1,24 +1,30 @@
 async function renderNewNote() {
   toggleOverlay();
-  buttonStatus(true);
-  await prepareNewNote();
-  deleteNoteInput();
-  renderNotes();
-  buttonStatus(false);
+  const noteCreated = await prepareNewNote();
+  if (noteCreated) {
+    deleteNoteInput();
+    renderNotes();
+  }
   toggleOverlay();
 }
 
 async function prepareNewNote() {
   let noteData = await newNoteData();
-  if (!noteData) return;
+  if (!noteData) {
+    showErrorMessage();
+    return false;
+  }
   let { noteTitle: title, noteContent: content } = noteData;
   await createNoteCall(title, content);
+  return true;
 }
 
 async function newNoteData() {
   let title = getNoteInput(noteTitle);
   let content = getNoteInput(noteContent);
-  if (!checkInputValue(title, content)) return;
+  if (!checkInputValue(title, content)) {
+    return;
+  }
   return { noteTitle: title, noteContent: content };
 }
 
@@ -35,6 +41,18 @@ function deleteNoteInput() {
   noteContent.value = "";
 }
 
-function buttonStatus(status) {
-  createButton.disabled = status;
+function showErrorMessage() {
+  errorNote.classList.toggle("d_none");
+  errorTitle.classList.toggle("d_none");
+  noteTitle.classList.toggle("errorInput");
+  noteContent.classList.toggle("errorInput");
+  createButton.disabled = true;
+}
+
+function removeErrorMessage() {
+  errorNote.classList.add("d_none");
+  errorTitle.classList.add("d_none");
+  noteTitle.classList.remove("errorInput");
+  noteContent.classList.remove("errorInput");
+  createButton.disabled = false;
 }

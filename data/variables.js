@@ -10,9 +10,15 @@ let noteContent = null;
 
 let createButton = null;
 
+let errorTitle = null;
+
+let errorNote = null;
+
 function setVariables() {
   container = document.getElementById("notesDisplay");
   noteTitle = document.getElementById("title");
   noteContent = document.getElementById("content");
   createButton = document.getElementById("createButton");
+  errorNote = document.getElementById("errorMessageNote");
+  errorTitle = document.getElementById("errorMessageTitle");
 }

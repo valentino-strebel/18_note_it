@@ -11,6 +11,7 @@
     <script src="/notes/deleteNote.js"></script>
     <script src="/notes/categoryNote.js"></script>
     <script src="/notes/showNote.js"></script>
+    <script src="/notes/editNote.js"></script>
 
     <script src="./templates/notes_displayed.template.js"></script>
     <script src="./templates/notes_archive.template.js"></script>
@@ -31,8 +32,14 @@
     <div id="overlay" class="overlayContainer d_none"></div>
     <div class="allNotes">
       <section class="createNote">
-        <input id="title" type="text" placeholder="Title" />
-        <textarea rows="5" id="content" placeholder="Note"></textarea>
+        <input id="title" type="text" placeholder="Title" onfocus="removeErrorMessage()" />
+        <div class="errorMessage">
+          <p id="errorMessageTitle" class="d_none">*Enter a Title</p>
+        </div>
+        <textarea id="content" placeholder="Note" onfocus="removeErrorMessage()"></textarea>
+        <div class="errorMessage">
+          <p id="errorMessageNote" class="d_none">*Enter a Note</p>
+        </div>
         <div class="creatButtonContainer">
           <button id="createButton" onclick="renderNewNote()">Create</button>
         </div>
