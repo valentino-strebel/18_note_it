@@ -21,6 +21,12 @@
   font-weight: 600;
 }
 
+.noteBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .creationDate {
   font-size: 12px;
   font-weight: 600;
@@ -31,34 +37,94 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 8px;
 }
 
+/* Button  Default*/
 .noteButtons button {
-  border-radius: 8px;
-  padding: 8px;
+  border: solid 0 transparent;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
+/*Button Images Hover*/
+.noteButtons button:hover {
+  background-color: #eff6ff;
+  border-radius: 6px;
+}
+
+/*Button Images Active*/
+.noteButtons button:active {
+  background-color: #dbeafe;
+  border-radius: 6px;
+  transform: scale(0.95);
+}
+
+/* Button Images Default*/
 .noteButtons button.delete {
-  background-color: red;
+  background-image: url(../../assets/img/note_icons/default/delete_perma.svg);
 }
 
 .noteButtons button.trash {
-  background-color: orangered;
+  background-image: url(../../assets/img/note_icons/default/delete.svg);
 }
 
 .noteButtons button.edit {
-  background-color: lightblue;
+  background-image: url(../../assets/img/note_icons/default/edit.svg);
 }
 
 .noteButtons button.active {
-  background-color: greenyellow;
+  background-image: url(../../assets/img/note_icons/default/restore.svg);
 }
 
 .noteButtons button.archive {
-  background-color: violet;
+  background-image: url(../../assets/img/note_icons/default/archive.svg);
+}
+
+/*Button Images Hover*/
+.noteButtons button.delete:hover {
+  background-image: url(../../assets/img/note_icons/hover/delete_perma.svg);
+}
+
+.noteButtons button.trash:hover {
+  background-image: url(../../assets/img/note_icons/hover/delete.svg);
+}
+
+.noteButtons button.edit:hover {
+  background-image: url(../../assets/img/note_icons/hover/edit.svg);
+}
+
+.noteButtons button.active:hover {
+  background-image: url(../../assets/img/note_icons/hover/restore.svg);
+}
+
+.noteButtons button.archive:hover {
+  background-image: url(../../assets/img/note_icons/hover/archive.svg);
+}
+
+/*Button Images Active*/
+.noteButtons button.delete:active {
+  background-image: url(../../assets/img/note_icons/active/delete_perma.svg);
+}
+
+.noteButtons button.trash:active {
+  background-image: url(../../assets/img/note_icons/active/delete.svg);
+}
+
+.noteButtons button.edit:active {
+  background-image: url(../../assets/img/note_icons/active/edit.svg);
+}
+
+.noteButtons button.active:active {
+  background-image: url(../../assets/img/note_icons/active/restore.svg);
+}
+
+.noteButtons button.archive:active {
+  background-image: url(../../assets/img/note_icons/active/archive.svg);
 }

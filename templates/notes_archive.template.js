@@ -4,17 +4,13 @@ function notesArchive(myNotes) {
     <div class="notesContainer">
       <h1 id="title-${myNotes.id}" class="noteHeadline">${myNotes.title}</h1>
       <p id="content-${myNotes.id}" class="noteContent">${myNotes.content}</p>
-      <p class="creationDate">${date}</p>
-      <div class="noteButtons">
-        <button class="edit" onclick="editNote('${myNotes.id}')">
-          <img src="./assets/img/note_icons/edit.svg" alt="Button to begin editing note" />
-        </button>
-        <button class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')">
-          <img src="./assets/img/note_icons/restore.svg" alt="Button to move note to My Notes" />
-        </button>
-        <button class="trash" onclick="changeCategoryNote('${myNotes.id}', 'trash')">
-          <img src="./assets/img/note_icons/delete.svg" alt="Button to move note to Trash" />
-        </button>
+      <div class="noteBottom">
+        <p class="creationDate">${date}</p>
+        <div class="noteButtons">
+          <button title="Edit note" class="edit" onclick="editNote('${myNotes.id}')"></button>
+          <button title="Restore note" class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')"></button>
+          <button title="Move note to trash" class="trash" onclick="changeCategoryNote('${myNotes.id}', 'trash')"></button>
+        </div>
       </div>
     </div>
   `;

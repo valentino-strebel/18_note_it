@@ -5,17 +5,12 @@ function notesTrash(myNotes) {
     <div class="notesContainer">
       <h1 id="title-${myNotes.id}" class="noteHeadline">${myNotes.title}</h1>
       <p id="content-${myNotes.id}" class="noteContent">${myNotes.content}</p>
-      <p class="creationDate">${date}</p>
-      <div class="noteButtons">
-        <button class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')">
-          <img src="./assets/img/note_icons/restore.svg" alt="Icon to move note to archive" />
-        </button>
-        <button class="archive" onclick="changeCategoryNote('${myNotes.id}', 'archive')">
-          <img src="./assets/img/note_icons/archive.svg" alt="Icon to move note to archive" />
-        </button>
-        <button class="delete" onclick="deleteNote('${myNotes.id}')">
-          <img src="./assets/img/note_icons/delete_perma.svg" alt="Icon to permanently delete note" />
-        </button>
+      <div class="noteBottom">
+        <p class="creationDate">${date}</p>
+        <div class="noteButtons">
+          <button title="Restore note" class="active" onclick="changeCategoryNote('${myNotes.id}', 'active')"></button>
+          <button title="Permanently delete note" class="delete" onclick="deleteNote('${myNotes.id}')"></button>
+        </div>
       </div>
     </div>
   `;
