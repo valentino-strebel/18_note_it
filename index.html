@@ -17,19 +17,23 @@
     <script src="./templates/notes_archive.template.js"></script>
     <script src="./templates/notes_trash.template.js"></script>
     <script src="./templates/no_notes.template.js"></script>
+    <script src="./templates/notes_edit.template.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 
     <link rel="stylesheet" href="./style/notes/notes_details.css" />
     <link rel="stylesheet" href="./style/notes/notes_display.css" />
     <link rel="stylesheet" href="./style/notes/create_note.css" />
+    <link rel="stylesheet" href="./style/notes/notes_edit.css" />
 
     <link rel="stylesheet" href="./style/sidebar.css" />
 
     <link rel="stylesheet" href="./style/overlay.css" />
   </head>
   <body onload="onInit()">
-    <div id="overlay" class="overlayContainer d_none"></div>
+    <div id="overlay" class="overlayContainer d_none">
+      <div id="overlayContent" class="overlayContent"></div>
+    </div>
     <div class="allNotes">
       <section class="createNote">
         <input id="title" type="text" placeholder="Title" onfocus="removeErrorMessage()" />
