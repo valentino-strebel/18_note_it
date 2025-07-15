@@ -12,7 +12,7 @@ function prepareNoteEditContent(noteId) {
   let editTitle = document.getElementById(`title-${noteId}`).textContent;
   let editContent = document.getElementById(`content-${noteId}`).textContent;
   let noteTimestamp = document.getElementById(`creation-${noteId}`).textContent;
-  let noteData = { "title": editTitle, "content": editContent, "time": noteTimestamp };
+  let noteData = { "title": editTitle, "content": editContent, "time": noteTimestamp, "id": noteId };
   return noteData;
 }
 

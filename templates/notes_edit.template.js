@@ -7,7 +7,7 @@ function notesEdit(myNotes) {
         <p id="creation-${myNotes.id}" class="creationDate">${myNotes.time}</p>
         <div class="noteButtons">
           <button title="Close without saving" class="close" onclick="closeEditNote('${myNotes.id}')"></button>
-          <button title="Save changes" class="save" onclick="saveNote('${myNotes.id}')"></button>
+          <button title="Save changes" class="save" onclick="editNote('${myNotes.id}')"></button>
         </div>
       </div>
     </div>
