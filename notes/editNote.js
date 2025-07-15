@@ -20,8 +20,18 @@ function openEditWindow(noteData) {
   document.getElementById("overlayContent").innerHTML = notesEdit(noteData);
 }
 
-function editNote(noteId) {
-  console.log(noteId);
+async function editNote(noteId) {
+  let editData = preparePayloadData(noteId);
+  await updateNoteCall(noteId, editData.title, editData.content);
+  closeEditNote();
+  renderNotes();
+}
+
+function preparePayloadData(noteId) {
+  let newTitle = document.getElementById(`edit-title-${noteId}`).value;
+  let newNote = document.getElementById(`edit-content-${noteId}`).value;
+  let editData = { "title": newTitle, "content": newNote };
+  return editData;
 }
 
 function closeEditNote() {
