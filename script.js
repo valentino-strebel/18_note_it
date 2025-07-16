@@ -2,6 +2,7 @@ function onInit() {
   setVariables();
   renderNotes();
   focusCategory();
+  calculateHeight();
 }
 
 function formatDate(isoString) {
@@ -45,3 +46,12 @@ function cleanOverlay() {
 function noBubble(event) {
   event.stopPropagation();
 }
+
+function calculateHeight() {
+  const div = document.getElementById("categorySections");
+  const rect = div.getBoundingClientRect();
+  const fromTop = rect.top + window.scrollY;
+  div.style.height = `calc(100vh - ${fromTop}px)`;
+}
+
+window.addEventListener("resize", calculateHeight);

@@ -8,6 +8,8 @@ body {
   padding: 0 64px;
   max-width: 1440px;
   margin: auto;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 * {

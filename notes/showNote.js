@@ -28,16 +28,25 @@ function ifNotesAvailable(filteredNotes) {
   filteredNotes.forEach((note) => {
     switch (displayCategory) {
       case "active":
-        container.innerHTML += notesDisplay(note);
+        createNoteBasic(note, notesActive);
         break;
       case "trash":
-        container.innerHTML += notesTrash(note);
+        createNoteBasic(note, notesArchive);
         break;
       case "archive":
-        container.innerHTML += notesArchive(note);
+        createNoteBasic(note, notesTrash);
         break;
     }
   });
+}
+
+function createNoteBasic(note, buttonCategory) {
+  container.innerHTML += notesDisplay(note);
+  createNoteButtons(note, buttonCategory);
+}
+
+function createNoteButtons(note, buttonCategory) {
+  document.getElementById(`note-buttons-${note.id}`).innerHTML = buttonCategory(note);
 }
 
 function cleanDisplayedNotes() {

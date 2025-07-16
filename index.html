@@ -23,6 +23,7 @@
     <script src="./templates/no_notes.template.js"></script>
     <script src="./templates/notes_edit.template.js"></script>
     <script src="./templates/notes_open.template.js"></script>
+    <script src="./templates/notes_active.template.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -64,7 +65,7 @@
           <button id="archive" class="notesCategory" onclick="changeCategory('archive')">Archive</button>
           <button id="trash" class="notesCategory" onclick="changeCategory('trash')">Trash</button>
         </div>
-        <div class="categorySections">
+        <div class="categorySections" id="categorySections">
           <section class="notes">
             <div class="notesDisplay" id="notesDisplay"></div>
           </section>

@@ -7,6 +7,8 @@
 .categorySections {
   display: flex;
   flex-direction: column;
+  overflow-x: auto;
+  height: calc(100vh - 365px);
 }
 
 .notes {
@@ -25,5 +27,9 @@
 @media (max-width: 800px) {
   .notesDisplay {
     padding: 0;
+  }
+
+  .categorySections {
+    height: calc(100vh - 430px);
   }
 }
