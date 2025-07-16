@@ -12,8 +12,7 @@ function prepareNoteEditContent(noteId) {
   let editTitle = document.getElementById(`title-${noteId}`).textContent;
   let editContent = document.getElementById(`content-${noteId}`).textContent;
   let noteTimestamp = document.getElementById(`creation-${noteId}`).textContent;
-  let noteData = { "title": editTitle, "content": editContent, "time": noteTimestamp, "id": noteId };
-  return noteData;
+  return { "title": editTitle, "content": editContent, "time": noteTimestamp, "id": noteId };
 }
 
 function openEditWindow(noteData) {
@@ -23,22 +22,17 @@ function openEditWindow(noteData) {
 async function editNote(noteId) {
   let editData = preparePayloadData(noteId);
   await updateNoteCall(noteId, editData.title, editData.content);
-  closeEditNote();
+  closeOverlay();
   renderNotes();
 }
 
 function preparePayloadData(noteId) {
   let newTitle = document.getElementById(`edit-title-${noteId}`).value;
   let newNote = document.getElementById(`edit-content-${noteId}`).value;
-  let editData = { "title": newTitle, "content": newNote };
-  return editData;
+  return { "title": newTitle, "content": newNote };
 }
 
-function closeEditNote() {
-  cleanEditVariables();
-  toggleOverlay();
-}
-
-function cleanEditVariables() {
-  document.getElementById("overlayContent").innerHTML = "";
+function openNoteEditFromDetails(noteId) {
+  cleanOverlay();
+  showNoteEdit(noteId);
 }

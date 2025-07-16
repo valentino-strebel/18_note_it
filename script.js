@@ -32,3 +32,16 @@ function focusCategory() {
 function toggleOverlay() {
   document.getElementById("overlay").classList.toggle("d_none");
 }
+
+function closeOverlay() {
+  cleanOverlay();
+  toggleOverlay();
+}
+
+function cleanOverlay() {
+  document.getElementById("overlayContent").innerHTML = "";
+}
+
+function noBubble(event) {
+  event.stopPropagation();
+}

@@ -11,6 +11,11 @@
   border-radius: 8px;
 }
 
+.editNoteContainer input,
+textarea {
+  padding: 4px;
+}
+
 /*Button Default*/
 .noteButtons button.save {
   background-image: url(../../assets/img/note_edit_icons/default/save.svg);

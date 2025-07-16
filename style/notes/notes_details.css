@@ -8,6 +8,17 @@
   border: 1px solid #e5eaf1;
   background-color: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.notesContainer:hover {
+  border-color: #93c5fd;
+}
+
+.notesContainer:active {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 .noteHeadline {
