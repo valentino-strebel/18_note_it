@@ -3,8 +3,8 @@ function notesTrash(myNotes) {
 
   return `
     <div class="notesContainer" onclick="openDetails('${myNotes.id}')">
-      <h1 id="title-${myNotes.id}" class="noteHeadline">${myNotes.title}</h1>
-      <p id="content-${myNotes.id}" class="noteContent">${myNotes.content}</p>
+      <h1 id="title-${myNotes.id}" class="noteHeadline truncate">${myNotes.title}</h1>
+      <p id="content-${myNotes.id}" class="noteContent truncate">${myNotes.content}</p>
       <div class="noteBottom">
         <p id="creation-${myNotes.id}" class="creationDate">${date}</p>
         <div class="noteButtons" onclick="noBubble(event)">

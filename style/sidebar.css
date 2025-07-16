@@ -13,6 +13,7 @@
   color: #1e3a8a;
   background-color: #f5f9ff;
   border-style: none;
+  border-radius: 8px;
   padding: 12px 16px;
   text-align: start;
 }
@@ -28,4 +29,21 @@
 .buttonFocus {
   font-weight: 800 !important;
   background-color: #dcebff !important;
+}
+
+@media (max-width: 800px) {
+  .sidebar {
+    flex-direction: row;
+    width: fit-content;
+    padding: 0;
+    background-color: transparent;
+    gap: 8px;
+  }
+
+  .sidebar button {
+    background-color: #f5f9ff;
+    text-align: center;
+    font-size: 14px;
+    padding: 16px;
+  }
 }
