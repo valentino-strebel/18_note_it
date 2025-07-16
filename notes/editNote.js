@@ -21,9 +21,15 @@ function openEditWindow(noteData) {
 
 async function editNote(noteId) {
   let editData = preparePayloadData(noteId);
-  await updateNoteCall(noteId, editData.title, editData.content);
   closeOverlay();
-  renderNotes();
+  runEditUpdate(editData, noteId);
+}
+
+async function runEditUpdate(editData, noteId) {
+  toggleOverlay();
+  await updateNoteCall(noteId, editData.title, editData.content);
+  await renderNotes();
+  toggleOverlay();
 }
 
 function preparePayloadData(noteId) {

@@ -21,6 +21,13 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
 .noteHeadline {
   font-size: 18px;
   font-weight: 600;
