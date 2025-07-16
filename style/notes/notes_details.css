@@ -28,6 +28,11 @@
   width: 100%;
 }
 
+.noteHeadline,
+.noteContent {
+  word-wrap: break-word;
+}
+
 .noteHeadline {
   font-size: 18px;
   font-weight: 600;

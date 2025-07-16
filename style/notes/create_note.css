@@ -22,7 +22,6 @@
 
 .createNote textarea {
   resize: vertical;
-  max-width: calc(100% - 16px);
   max-height: 200px;
   min-height: 100px;
 }
