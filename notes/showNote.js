@@ -31,10 +31,10 @@ function ifNotesAvailable(filteredNotes) {
         createNoteBasic(note, notesActive);
         break;
       case "trash":
-        createNoteBasic(note, notesArchive);
+        createNoteBasic(note, notesTrash);
         break;
       case "archive":
-        createNoteBasic(note, notesTrash);
+        createNoteBasic(note, notesArchive);
         break;
     }
   });
@@ -42,10 +42,10 @@ function ifNotesAvailable(filteredNotes) {
 
 function createNoteBasic(note, buttonCategory) {
   container.innerHTML += notesDisplay(note);
-  createNoteButtons(note, buttonCategory);
+  renderNoteWithButtons(note, buttonCategory);
 }
 
-function createNoteButtons(note, buttonCategory) {
+function renderNoteWithButtons(note, buttonCategory) {
   document.getElementById(`note-buttons-${note.id}`).innerHTML = buttonCategory(note);
 }
 
