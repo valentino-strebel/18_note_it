@@ -5,3 +5,9 @@ function noNotes() {
     </div>
   `;
 }
+
+function noNotesError() {
+  return `
+  "<p>Error loading notes.</p>"
+  `;
+}

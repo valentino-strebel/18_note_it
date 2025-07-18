@@ -9,14 +9,14 @@ function showNoteEdit(noteId) {
 }
 
 function prepareNoteEditContent(noteId) {
-  let editTitle = document.getElementById(`title-${noteId}`).textContent;
-  let editContent = document.getElementById(`content-${noteId}`).textContent;
-  let noteTimestamp = document.getElementById(`creation-${noteId}`).textContent;
+  let editTitle = getDivId(`title-${noteId}`).textContent;
+  let editContent = getDivId(`content-${noteId}`).textContent;
+  let noteTimestamp = getDivId(`creation-${noteId}`).textContent;
   return { "title": editTitle, "content": editContent, "time": noteTimestamp, "id": noteId };
 }
 
 function openEditWindow(noteData) {
-  document.getElementById("overlayContent").innerHTML = notesEdit(noteData);
+  getDivId("overlayContent").innerHTML = notesEdit(noteData);
 }
 
 async function editNote(noteId) {
@@ -33,8 +33,8 @@ async function runEditUpdate(editData, noteId) {
 }
 
 function preparePayloadData(noteId) {
-  let newTitle = document.getElementById(`edit-title-${noteId}`).value;
-  let newNote = document.getElementById(`edit-content-${noteId}`).value;
+  let newTitle = getDivId(`edit-title-${noteId}`).value;
+  let newNote = getDivId(`edit-content-${noteId}`).value;
   return { "title": newTitle, "content": newNote };
 }
 

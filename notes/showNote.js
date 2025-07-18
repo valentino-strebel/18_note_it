@@ -45,7 +45,7 @@ function createNoteBasic(note, buttonCategory) {
 }
 
 function renderNoteWithButtons(note, buttonCategory) {
-  document.getElementById(`note-buttons-${note.id}`).innerHTML = buttonCategory(note);
+  getDivId(`note-buttons-${note.id}`).innerHTML = buttonCategory(note);
 }
 
 function noNotesNotification() {
@@ -54,5 +54,5 @@ function noNotesNotification() {
 
 function catchFetchingNotesError(error) {
   console.error("Failed to load notes:", error);
-  container.innerHTML = "<p>Error loading notes.</p>";
+  container.innerHTML = noNotesError();
 }

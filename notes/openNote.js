@@ -9,12 +9,12 @@ function openNoteDetails(noteId) {
 }
 
 function openDetailsWindow(noteData) {
-  document.getElementById("overlayContent").innerHTML = notesOpen(noteData);
+  getDivId("overlayContent").innerHTML = notesOpen(noteData);
 }
 
 function prepareNoteOpenContent(noteId) {
-  let openTitle = document.getElementById(`title-${noteId}`).textContent;
-  let openContent = document.getElementById(`content-${noteId}`).textContent;
-  let openTimestamp = document.getElementById(`creation-${noteId}`).textContent;
+  let openTitle = getDivId(`title-${noteId}`).textContent;
+  let openContent = getDivId(`content-${noteId}`).textContent;
+  let openTimestamp = getDivId(`creation-${noteId}`).textContent;
   return { "title": openTitle, "content": openContent, "time": openTimestamp, "id": noteId };
 }
