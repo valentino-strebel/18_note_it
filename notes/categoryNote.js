@@ -1,12 +1,12 @@
 async function changeCategoryNote(noteId, noteCategory) {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   await statusNoteCall(noteId, noteCategory);
   await renderNotes();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }
 
 async function changeCategoryFromDetails(noteId, noteCategory) {
   await statusNoteCall(noteId, noteCategory);
   await renderNotes();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }

@@ -1,6 +1,6 @@
 async function deleteNote(noteId) {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   await deleteNoteCall(noteId);
   renderNotes();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }

@@ -15,9 +15,9 @@ function formatDate(isoString) {
 
 async function changeCategory(category) {
   focusCategory();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   await notesProcess(category);
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   focusCategory();
 }
 
@@ -27,20 +27,29 @@ async function notesProcess(category) {
 }
 
 function focusCategory() {
-  document.getElementById(displayCategory).classList.toggle("buttonFocus");
+  let category = document.getElementById(displayCategory);
+  toggleClass(category, "buttonFocus");
 }
 
-function toggleOverlay() {
-  document.getElementById("overlay").classList.toggle("d_none");
+function toggleClass(selectedId, selectedClass) {
+  selectedId.classList.toggle(selectedClass);
+}
+
+function addClass(selectedId, selectedClass) {
+  selectedId.classList.add(selectedClass);
+}
+
+function removeClass(selectedId, selectedClass) {
+  selectedId.classList.remove(selectedClass);
 }
 
 function closeOverlay() {
   cleanOverlay();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }
 
 function cleanOverlay() {
-  document.getElementById("overlayContent").innerHTML = "";
+  overlayContent.innerHTML = "";
 }
 
 function noBubble(event) {
@@ -48,7 +57,6 @@ function noBubble(event) {
 }
 
 function calculateHeight() {
-  const div = document.getElementById("categorySections");
   const rect = div.getBoundingClientRect();
   const fromTop = rect.top + window.scrollY;
   div.style.height = `calc(100vh - ${fromTop}px)`;

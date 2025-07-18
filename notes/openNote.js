@@ -1,5 +1,5 @@
 function openDetails(noteId) {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   openNoteDetails(noteId);
 }
 

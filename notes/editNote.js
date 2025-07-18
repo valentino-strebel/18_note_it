@@ -1,5 +1,5 @@
 function openNoteEdit(noteId) {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   showNoteEdit(noteId);
 }
 
@@ -26,10 +26,10 @@ async function editNote(noteId) {
 }
 
 async function runEditUpdate(editData, noteId) {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   await updateNoteCall(noteId, editData.title, editData.content);
   await renderNotes();
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }
 
 function preparePayloadData(noteId) {

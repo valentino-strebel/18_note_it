@@ -1,11 +1,11 @@
 async function renderNotes() {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   try {
     await showNotes(displayCategory);
   } catch (error) {
     catchFetchingNotesError(error);
   } finally {
-    toggleOverlay();
+    toggleClass(overlay, "d_none");
   }
 }
 

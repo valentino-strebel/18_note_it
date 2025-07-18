@@ -1,11 +1,11 @@
 async function renderNewNote() {
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
   const noteCreated = await prepareNewNote();
   if (noteCreated) {
     deleteNoteInput();
     renderNotes();
   }
-  toggleOverlay();
+  toggleClass(overlay, "d_none");
 }
 
 async function prepareNewNote() {
@@ -42,17 +42,17 @@ function deleteNoteInput() {
 }
 
 function showErrorMessage() {
-  errorNote.classList.toggle("d_none");
-  errorTitle.classList.toggle("d_none");
-  noteTitle.classList.toggle("errorInput");
-  noteContent.classList.toggle("errorInput");
+  toggleClass(errorNote, "d_none");
+  toggleClass(errorTitle, "d_none");
+  toggleClass(noteTitle, "errorInput");
+  toggleClass(noteContent, "errorInput");
   createButton.disabled = true;
 }
 
 function removeErrorMessage() {
-  errorNote.classList.add("d_none");
-  errorTitle.classList.add("d_none");
-  noteTitle.classList.remove("errorInput");
-  noteContent.classList.remove("errorInput");
+  addClass(errorNote, "d_none");
+  addClass(errorTitle, "d_none");
+  removeClass(noteTitle, "errorInput");
+  removeClass(noteContent, "errorInput");
   createButton.disabled = false;
 }
