@@ -8,6 +8,8 @@ function noNotes() {
 
 function noNotesError() {
   return `
-  "<p>Error loading notes.</p>"
+    "
+    <p>Error loading notes.</p>
+    "
   `;
 }
