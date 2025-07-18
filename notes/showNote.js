@@ -15,7 +15,7 @@ async function showNotes() {
 }
 
 function renderNotesToCategory(myNotes) {
-  cleanDisplayedNotes();
+  cleanDiv(container);
   let filteredNotes = myNotes.filter((note) => note.category === displayCategory);
   if (!filteredNotes.length) {
     noNotesNotification();
@@ -46,10 +46,6 @@ function createNoteBasic(note, buttonCategory) {
 
 function renderNoteWithButtons(note, buttonCategory) {
   document.getElementById(`note-buttons-${note.id}`).innerHTML = buttonCategory(note);
-}
-
-function cleanDisplayedNotes() {
-  container.innerHTML = "";
 }
 
 function noNotesNotification() {

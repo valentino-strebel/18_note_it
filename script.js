@@ -27,29 +27,29 @@ async function notesProcess(category) {
 }
 
 function focusCategory() {
-  let category = document.getElementById(displayCategory);
+  let category = getDivId(displayCategory);
   toggleClass(category, "buttonFocus");
 }
 
-function toggleClass(selectedId, selectedClass) {
-  selectedId.classList.toggle(selectedClass);
+function toggleClass(element, className) {
+  element.classList.toggle(className);
 }
 
-function addClass(selectedId, selectedClass) {
-  selectedId.classList.add(selectedClass);
+function addClass(element, className) {
+  element.classList.add(className);
 }
 
-function removeClass(selectedId, selectedClass) {
-  selectedId.classList.remove(selectedClass);
+function removeClass(element, className) {
+  element.classList.remove(className);
 }
 
 function closeOverlay() {
-  cleanOverlay();
+  cleanDiv(overlayContent);
   toggleClass(overlay, "d_none");
 }
 
-function cleanOverlay() {
-  overlayContent.innerHTML = "";
+function cleanDiv(element) {
+  element.innerHTML = "";
 }
 
 function noBubble(event) {
@@ -60,6 +60,10 @@ function calculateHeight() {
   const rect = div.getBoundingClientRect();
   const fromTop = rect.top + window.scrollY;
   div.style.height = `calc(100vh - ${fromTop}px)`;
+}
+
+function getDivId(selectedId) {
+  return document.getElementById(selectedId);
 }
 
 window.addEventListener("resize", calculateHeight);

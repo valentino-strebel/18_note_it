@@ -39,6 +39,6 @@ function preparePayloadData(noteId) {
 }
 
 function openNoteEditFromDetails(noteId) {
-  cleanOverlay();
+  cleanDiv(overlayContent);
   showNoteEdit(noteId);
 }

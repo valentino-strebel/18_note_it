@@ -21,13 +21,13 @@ let overlayContent = null;
 let div = null;
 
 function setVariables() {
-  div = document.getElementById("categorySections");
-  overlay = document.getElementById("overlay");
-  overlayContent = document.getElementById("overlayContent");
-  container = document.getElementById("notesDisplay");
-  noteTitle = document.getElementById("title");
-  noteContent = document.getElementById("content");
-  createButton = document.getElementById("createButton");
-  errorNote = document.getElementById("errorMessageNote");
-  errorTitle = document.getElementById("errorMessageTitle");
+  div = getDivId("categorySections");
+  overlay = getDivId("overlay");
+  overlayContent = getDivId("overlayContent");
+  container = getDivId("notesDisplay");
+  noteTitle = getDivId("title");
+  noteContent = getDivId("content");
+  createButton = getDivId("createButton");
+  errorNote = getDivId("errorMessageNote");
+  errorTitle = getDivId("errorMessageTitle");
 }
