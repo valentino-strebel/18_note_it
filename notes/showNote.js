@@ -1,8 +1,12 @@
 async function renderNotes() {
   toggleOverlay();
-  cleanDisplayedNotes();
-  await showNotes();
-  toggleOverlay();
+  try {
+    await showNotes(displayCategory);
+  } catch (error) {
+    catchFetchingNotesError(error);
+  } finally {
+    toggleOverlay();
+  }
 }
 
 async function showNotes() {
@@ -13,18 +17,13 @@ async function showNotes() {
 function renderNotesToCategory(myNotes) {
   cleanDisplayedNotes();
   let filteredNotes = myNotes.filter((note) => note.category === displayCategory);
-  ifNoNotes(filteredNotes);
-  ifNotesAvailable(filteredNotes);
-}
-
-function ifNoNotes(filteredNotes) {
-  if (filteredNotes.length === 0) {
+  if (!filteredNotes.length) {
     noNotesNotification();
-    return;
   }
+  prepareNotesForDisplay(filteredNotes);
 }
 
-function ifNotesAvailable(filteredNotes) {
+function prepareNotesForDisplay(filteredNotes) {
   filteredNotes.forEach((note) => {
     switch (displayCategory) {
       case "active":
@@ -55,4 +54,9 @@ function cleanDisplayedNotes() {
 
 function noNotesNotification() {
   container.innerHTML = noNotes();
+}
+
+function catchFetchingNotesError(error) {
+  console.error("Failed to load notes:", error);
+  container.innerHTML = "<p>Error loading notes.</p>";
 }
