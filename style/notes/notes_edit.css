@@ -1,0 +1,44 @@
+.editNoteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 200px;
+  background-color: #f9fbfe;
+  border-radius: 8px;
+}
+
+.editNoteContainer input,
+textarea {
+  padding: 4px;
+}
+
+/*Button Default*/
+.noteButtons button.save {
+  background-image: url(../../assets/img/note_edit_icons/default/save.svg);
+}
+
+.noteButtons button.close {
+  background-image: url(../../assets/img/note_edit_icons/default/close.svg);
+}
+
+/*Button Hover*/
+.noteButtons button.save:hover {
+  background-image: url(../../assets/img/note_edit_icons/hover/save.svg);
+}
+
+.noteButtons button.close:hover {
+  background-image: url(../../assets/img/note_edit_icons/hover/close.svg);
+}
+
+/*Button Active*/
+.noteButtons button.save:active {
+  background-image: url(../../assets/img/note_edit_icons/active/save.svg);
+}
+
+.noteButtons button.close:active {
+  background-image: url(../../assets/img/note_edit_icons/active/close.svg);
+}

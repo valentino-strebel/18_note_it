@@ -1,0 +1,30 @@
+.allNotes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.categorySections {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notesDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-left: 16px;
+}
+
+@media (max-width: 800px) {
+  .notesDisplay {
+    padding: 0;
+  }
+}

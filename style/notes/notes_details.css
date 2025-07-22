@@ -1,0 +1,153 @@
+.notesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  width: 200px;
+  border-radius: 8px;
+  border: 1px solid #e5eaf1;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.notesContainer:hover {
+  border-color: #93c5fd;
+}
+
+.notesContainer:active {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.noteHeadline,
+.noteContent {
+  word-wrap: break-word;
+}
+
+.noteHeadline {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.noteContent {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.noteBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.creationDate {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.noteButtons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Button  Default*/
+.noteButtons button {
+  border: solid 0 transparent;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+/*Button Images Hover*/
+.noteButtons button:hover {
+  background-color: #eff6ff;
+  border-radius: 6px;
+}
+
+/*Button Images Active*/
+.noteButtons button:active {
+  background-color: #dbeafe;
+  border-radius: 6px;
+  transform: scale(0.95);
+}
+
+/* Button Images Default*/
+.noteButtons button.delete {
+  background-image: url(../../assets/img/note_icons/default/delete_perma.svg);
+}
+
+.noteButtons button.trash {
+  background-image: url(../../assets/img/note_icons/default/delete.svg);
+}
+
+.noteButtons button.edit {
+  background-image: url(../../assets/img/note_icons/default/edit.svg);
+}
+
+.noteButtons button.active {
+  background-image: url(../../assets/img/note_icons/default/restore.svg);
+}
+
+.noteButtons button.archive {
+  background-image: url(../../assets/img/note_icons/default/archive.svg);
+}
+
+/*Button Images Hover*/
+.noteButtons button.delete:hover {
+  background-image: url(../../assets/img/note_icons/hover/delete_perma.svg);
+}
+
+.noteButtons button.trash:hover {
+  background-image: url(../../assets/img/note_icons/hover/delete.svg);
+}
+
+.noteButtons button.edit:hover {
+  background-image: url(../../assets/img/note_icons/hover/edit.svg);
+}
+
+.noteButtons button.active:hover {
+  background-image: url(../../assets/img/note_icons/hover/restore.svg);
+}
+
+.noteButtons button.archive:hover {
+  background-image: url(../../assets/img/note_icons/hover/archive.svg);
+}
+
+/*Button Images Active*/
+.noteButtons button.delete:active {
+  background-image: url(../../assets/img/note_icons/active/delete_perma.svg);
+}
+
+.noteButtons button.trash:active {
+  background-image: url(../../assets/img/note_icons/active/delete.svg);
+}
+
+.noteButtons button.edit:active {
+  background-image: url(../../assets/img/note_icons/active/edit.svg);
+}
+
+.noteButtons button.active:active {
+  background-image: url(../../assets/img/note_icons/active/restore.svg);
+}
+
+.noteButtons button.archive:active {
+  background-image: url(../../assets/img/note_icons/active/archive.svg);
+}

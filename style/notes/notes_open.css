@@ -1,0 +1,12 @@
+.notesDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 200px;
+  background-color: #f9fbfe;
+  border-radius: 8px;
+}

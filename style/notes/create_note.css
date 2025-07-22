@@ -1,0 +1,100 @@
+.createNote {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  max-width: 400px;
+  background-color: #f9fbfe;
+  padding: 16px;
+}
+
+.createNote input,
+.createNote textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createNote input {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.createNote textarea {
+  resize: vertical;
+  max-height: 200px;
+  min-height: 100px;
+}
+
+.createNote input:hover,
+.createNote textarea:hover {
+  border-color: #93c5fd;
+}
+
+.createNote input:focus,
+.createNote textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.createNote input:focus::placeholder,
+.createNote textarea:focus::placeholder {
+  color: transparent;
+}
+
+.creatButtonContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.creatButtonContainer button {
+  width: fit-content;
+  border-radius: 6px;
+  background-color: #007bff;
+  padding: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border-style: none;
+}
+
+.creatButtonContainer button:hover {
+  background: #155ee3;
+  box-shadow: 0 2px 6px rgba(30, 111, 255, 0.2);
+}
+
+.creatButtonContainer button:active {
+  background: #0c4dc1;
+  transform: scale(0.98);
+}
+
+.creatButtonContainer button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+
+.creatButtonContainer button:disabled:active {
+  transform: none;
+}
+
+.errorMessage {
+  height: 20px;
+  width: 100%;
+}
+
+.errorMessage p {
+  color: red;
+  font-size: 14px;
+}
+
+.errorInput {
+  border: solid 1px red !important;
+  background-color: rgb(255, 174, 174);
+}
+
+.errorInput::placeholder {
+  color: red;
+}
