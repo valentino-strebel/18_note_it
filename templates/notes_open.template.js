@@ -28,8 +28,10 @@ function notesOpen(myNotes) {
       <div class="noteButtons" onclick="noBubble(event)">
         <button title="Close without saving" class="close" onclick="closeOverlay('${myNotes.id}')"></button>
       </div>
-      <h1 id="details-title-${myNotes.id}" class="noteHeadline">${escapedTitle}</h1>
-      <p id="details-content-${myNotes.id}" class="noteContent">${escapedContent}</p>
+      <div class="notesDetailsMainContent">
+        <h1 id="details-title-${myNotes.id}" class="noteHeadline">${escapedTitle}</h1>
+        <p id="details-content-${myNotes.id}" class="noteContent">${escapedContent}</p>
+      </div>
       <div class="noteBottom">
         <p id="details-creation-${myNotes.id}" class="creationDate">${myNotes.time}</p>
         <div class="noteButtons" onclick="noBubble(event)">

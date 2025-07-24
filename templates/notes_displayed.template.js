@@ -20,8 +20,10 @@ function notesDisplay(myNotes) {
   let escapedTitle = escapeHTML(myNotes.title);
   return `
     <div class="notesContainer" onclick="openDetails('${myNotes.id}')">
-      <h1 id="title-${myNotes.id}" class="noteHeadline truncate">${escapedTitle}</h1>
-      <p id="content-${myNotes.id}" class="noteContent truncate">${escapedContent}</p>
+      <div class="mainNoteContent">
+        <h1 id="title-${myNotes.id}" class="noteHeadline truncate">${escapedTitle}</h1>
+        <p id="content-${myNotes.id}" class="noteContent truncate">${escapedContent}</p>
+      </div>
       <div class="noteBottom">
         <p id="creation-${myNotes.id}" class="creationDate">${date}</p>
         <div class="noteButtons" id="note-buttons-${myNotes.id}" onclick="noBubble(event)"></div>

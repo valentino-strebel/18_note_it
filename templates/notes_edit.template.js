@@ -24,8 +24,10 @@ function notesEdit(myNotes) {
       <div class="noteButtons" onclick="noBubble(event)">
         <button title="Close without saving" class="close" onclick="closeOverlay('${myNotes.id}')"></button>
       </div>
-      <input id="edit-title-${myNotes.id}" class="noteHeadline" type="text" value="${escapedTitle}" />
-      <textarea id="edit-content-${myNotes.id}" class="noteContent">${escapedContent}</textarea>
+      <div class="notesEditMainContent">
+        <input id="edit-title-${myNotes.id}" class="noteHeadline" type="text" value="${escapedTitle}" />
+        <textarea id="edit-content-${myNotes.id}" class="noteContent">${escapedContent}</textarea>
+      </div>
       <div class="noteBottom">
         <p id="creation-${myNotes.id}" class="creationDate">${myNotes.time}</p>
         <div class="noteButtons" onclick="noBubble(event)">
