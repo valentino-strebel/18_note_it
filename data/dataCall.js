@@ -6,7 +6,7 @@
  */
 async function getNotesCall() {
   try {
-    const response = await fetch(DATA_URL);
+    const response = await fetch(DATA_URL + ".json");
     if (!response.ok) throw new Error("Failed to fetch notes");
     const myNotes = await response.json();
     return myNotes;
@@ -26,7 +26,7 @@ async function getNotesCall() {
  */
 async function createNoteCall(noteTitle, noteContent) {
   try {
-    const response = await fetch(DATA_URL, {
+    const response = await fetch(DATA_URL + ".json", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,7 +55,7 @@ async function createNoteCall(noteTitle, noteContent) {
  */
 async function statusNoteCall(noteId, noteCategory) {
   try {
-    const response = await fetch(DATA_URL + `/${noteId}`, {
+    const response = await fetch(DATA_URL + `/${noteId}.json`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -82,7 +82,7 @@ async function statusNoteCall(noteId, noteCategory) {
  */
 async function updateNoteCall(noteId, noteTitle, noteContent) {
   try {
-    const response = await fetch(DATA_URL + `/${noteId}`, {
+    const response = await fetch(DATA_URL + `/${noteId}.json`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ async function updateNoteCall(noteId, noteTitle, noteContent) {
  */
 async function deleteNoteCall(noteId) {
   try {
-    const response = await fetch(`${DATA_URL}/${noteId}`, {
+    const response = await fetch(`${DATA_URL}/${noteId}.json`, {
       method: "DELETE",
     });
     if (!response.ok) throw new Error("Failed to delete note");

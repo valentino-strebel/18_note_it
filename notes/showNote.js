@@ -44,7 +44,6 @@ function checkDataType(myNotes) {
       id,
       ...note,
     }));
-    console.log("Transformed Firebase notes:", transformed);
     return transformed;
   }
   return myNotes;
