@@ -2,7 +2,9 @@
  * The base URL used for API calls to fetch and manage notes.
  * @type {string}
  */
-let DATA_URL = "https://192.168.2.140:3000/api/notes";
+let DATA_URL = "https://note-it-a3380-default-rtdb.europe-west1.firebasedatabase.app/notes.json";
+
+let DATA_URL_1 = "https://192.168.2.140:3000/api/notes";
 
 /**
  * The current category being displayed (e.g., "active", "archive", "trash").

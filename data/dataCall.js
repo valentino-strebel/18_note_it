@@ -34,6 +34,8 @@ async function createNoteCall(noteTitle, noteContent) {
       body: JSON.stringify({
         title: noteTitle,
         content: noteContent,
+        category: "active",
+        created: Date.now(),
       }),
     });
     if (!response.ok) throw new Error("Failed to create note");

@@ -20,11 +20,34 @@ async function renderNotes() {
  * Fetches all notes and renders them based on the current display category.
  *
  * @async
- * @returns {Promise<void>}
+ * @function showNotes
+ * @returns {Promise<void>} Resolves when notes are rendered
  */
 async function showNotes() {
   let myNotes = await getNotesCall();
+  myNotes = checkDataType(myNotes);
   renderNotesToCategory(myNotes);
+}
+
+/**
+ * Normalizes incoming notes data to ensure it's in array form.
+ * If the data is in Firebase object format, it converts it to an array
+ * with the IDs included in each note object.
+ *
+ * @function checkDataType
+ * @param {Object|Array} myNotes - The raw notes data, either from Firebase or another DB.
+ * @returns {Array<Object>} An array of note objects, each optionally including an `id` field.
+ */
+function checkDataType(myNotes) {
+  if (!Array.isArray(myNotes) && myNotes !== null && typeof myNotes === "object") {
+    const transformed = Object.entries(myNotes).map(([id, note]) => ({
+      id,
+      ...note,
+    }));
+    console.log("Transformed Firebase notes:", transformed);
+    return transformed;
+  }
+  return myNotes;
 }
 
 /**
