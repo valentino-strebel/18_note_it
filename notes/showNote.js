@@ -6,6 +6,7 @@
  * @returns {Promise<void>}
  */
 async function renderNotes() {
+  cleanDiv(overlayContent);
   toggleClass(overlay, "d_none");
   try {
     await showNotes(displayCategory);
