@@ -4,16 +4,46 @@
  * @async
  * @returns {Promise<Array<Object>>} - An array of note objects, or an empty array if an error occurs.
  */
-async function getNotesCall() {
+async function getNotesCall(url) {
   try {
-    const response = await fetch(DATA_URL + ".json");
-    if (!response.ok) throw new Error("Failed to fetch notes");
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Fetch failed for ${url}`);
     const myNotes = await response.json();
     return myNotes;
   } catch (error) {
-    console.error("Failed to fetch data", error);
-    return []; // Return empty array to prevent undefined errors
+    console.error(`Error fetching notes from ${url}`, error);
+    return null;
   }
+}
+
+/**
+ * Attempts to fetch notes data from one or more data source URLs in order of priority.
+ *
+ * @async
+ * @function notesApiCall
+ * @returns {Promise<Array>} A promise that resolves to an array of note objects.
+ *
+ * The function:
+ * - Tries to fetch from a primary data source (`DATA_URL + ".json"`).
+ * - If that fails, it attempts a fallback data source (`DATA_URL_1`).
+ * - Returns the notes data from the first successful fetch.
+ * - If all fetch attempts fail, it logs an error and returns an empty array.
+ *
+ * Depends on:
+ * - `getNotesCall(url)`: A helper function that performs a single fetch and handles errors.
+ *
+ * Notes:
+ * - The returned array will be empty if no source is available or if all fetches fail.
+ * - Ensure `getNotesCall` returns `null` or a falsy value on failure so fallback works correctly.
+ */
+async function notesApiCall() {
+  const urls = [DATA_URL + ".json", DATA_URL_1];
+  for (const url of urls) {
+    const notes = await getNotesCall(url);
+    if (notes) return notes;
+  }
+  console.error("All data sources failed. Returning empty notes.");
+  return [];
 }
 
 /**
