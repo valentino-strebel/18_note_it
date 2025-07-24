@@ -22,7 +22,7 @@ function notesDisplay(myNotes) {
     <div class="notesContainer" onclick="openDetails('${myNotes.id}')">
       <div class="mainNoteContent">
         <h1 id="title-${myNotes.id}" class="noteHeadline truncate">${escapedTitle}</h1>
-        <p id="content-${myNotes.id}" class="noteContent truncate">${escapedContent}</p>
+        <p id="content-${myNotes.id}" class="noteContent truncate truncateMultiline">${escapedContent}</p>
       </div>
       <div class="noteBottom">
         <p id="creation-${myNotes.id}" class="creationDate">${date}</p>

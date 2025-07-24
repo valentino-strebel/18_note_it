@@ -17,15 +17,14 @@
  * The `noBubble(event)` function is used to prevent event bubbling from interfering with parent elements.
  */
 function notesEdit(myNotes) {
-  let escapedContent = escapeHTML(myNotes.content).replace(/\n/g, "<br>");
-  let escapedTitle = escapeHTML(myNotes.title);
+  let escapedContent = escapeHTML(myNotes.content).replace("<br>", /\n/g);
   return `
     <div class="editNoteContainer">
       <div class="noteButtons" onclick="noBubble(event)">
         <button title="Close without saving" class="close" onclick="closeOverlay('${myNotes.id}')"></button>
       </div>
       <div class="notesEditMainContent">
-        <input id="edit-title-${myNotes.id}" class="noteHeadline" type="text" value="${escapedTitle}" />
+        <input id="edit-title-${myNotes.id}" class="noteHeadline" type="text" value="${myNotes.title}" />
         <textarea id="edit-content-${myNotes.id}" class="noteContent">${escapedContent}</textarea>
       </div>
       <div class="noteBottom">

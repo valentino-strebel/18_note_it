@@ -22,14 +22,13 @@
  */
 function notesOpen(myNotes) {
   let escapedContent = escapeHTML(myNotes.content).replace(/\n/g, "<br>");
-  let escapedTitle = escapeHTML(myNotes.title);
   return `
     <div class="notesDetailsContainer">
       <div class="noteButtons" onclick="noBubble(event)">
         <button title="Close without saving" class="close" onclick="closeOverlay('${myNotes.id}')"></button>
       </div>
       <div class="notesDetailsMainContent">
-        <h1 id="details-title-${myNotes.id}" class="noteHeadline">${escapedTitle}</h1>
+        <h1 id="details-title-${myNotes.id}" class="noteHeadline">${myNotes.title}</h1>
         <p id="details-content-${myNotes.id}" class="noteContent">${escapedContent}</p>
       </div>
       <div class="noteBottom">

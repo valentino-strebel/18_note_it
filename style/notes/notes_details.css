@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.notesContainer h1 {
+  flex-shrink: 0;
+}
+
 .notesContainer:hover {
   border-color: #93c5fd;
 }
@@ -33,6 +37,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+}
+
+.truncateMultiline {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 .noteHeadline,

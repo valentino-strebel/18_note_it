@@ -26,7 +26,7 @@ function showNoteEdit(noteId) {
  */
 function prepareNoteEditContent(noteId) {
   let editTitle = getDivId(`title-${noteId}`).textContent;
-  let editContent = getDivId(`content-${noteId}`).textContent;
+  let editContent = getDivId(`content-${noteId}`).innerHTML.replace(/<br\s*\/?>/gi, "\n");
   let noteTimestamp = getDivId(`creation-${noteId}`).textContent;
   return { "title": editTitle, "content": editContent, "time": noteTimestamp, "id": noteId };
 }

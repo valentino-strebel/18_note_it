@@ -39,7 +39,7 @@ function openDetailsWindow(noteData) {
  */
 function prepareNoteOpenContent(noteId) {
   let openTitle = getDivId(`title-${noteId}`).textContent;
-  let openContent = getDivId(`content-${noteId}`).textContent;
+  let openContent = getDivId(`content-${noteId}`).innerHTML.replace(/<br\s*\/?>/gi, "\n");
   let openTimestamp = getDivId(`creation-${noteId}`).textContent;
   return { "title": openTitle, "content": openContent, "time": openTimestamp, "id": noteId };
 }

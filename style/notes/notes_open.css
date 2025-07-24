@@ -10,6 +10,11 @@
   border-radius: 8px;
 }
 
+.notesDetailsContainer p {
+  overflow-y: auto;
+  width: 100%;
+}
+
 .notesDetailsMainContent {
   min-height: calc(300px - 32px - 52px);
   display: flex;
