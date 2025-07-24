@@ -1,9 +1,13 @@
 /**
- * The base URL used for API calls to fetch and manage notes.
+ * The base URL used for Firebase API calls to fetch and manage notes.
  * @type {string}
  */
 let DATA_URL = "https://note-it-a3380-default-rtdb.europe-west1.firebasedatabase.app/notes";
 
+/**
+ * The base URL used for Raspberry API calls to fetch and manage notes.
+ * @type {string}
+ */
 let DATA_URL_1 = "https://192.168.2.140:3000/api/notes";
 
 /**
