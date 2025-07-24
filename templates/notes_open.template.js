@@ -1,24 +1,31 @@
 /**
- * Generates an HTML structure for displaying an open note with options to edit,
- * archive, trash, or close the note.
+ * Generates an HTML structure for displaying a detailed (read-only) view of a note,
+ * including options to edit, archive, move to trash, or close the note view.
  *
- * @param {Object} myNotes - An object representing a note.
+ * @param {Object} myNotes - An object representing a single note.
  * @param {string} myNotes.id - Unique identifier of the note.
- * @param {string} myNotes.title - Title of the note.
- * @param {string} myNotes.content - Content/body of the note.
+ * @param {string} myNotes.title - Title of the note to display in the header.
+ * @param {string} myNotes.content - Content/body of the note. Newlines are converted to <br> for HTML rendering.
  * @param {string} myNotes.time - Timestamp or creation date of the note.
- * @returns {string} - HTML string that represents the detailed view of the note.
+ * @returns {string} HTML string that represents the full detail view of the note.
  *
- * The generated layout includes:
- * - A close button to close the view without saving (`closeOverlay`).
- * - Title and content display areas.
- * - Creation timestamp.
- * - Buttons to:
- *   - Edit the note (`openNoteEditFromDetails`)
- *   - Move the note to archive (`changeCategoryFromDetails` with 'archive')
- *   - Move the note to trash (`changeCategoryFromDetails` with 'trash')
+ * Features and Behavior:
+ * - Escapes HTML-sensitive characters in `content` to prevent XSS or injection.
+ * - Converts newline characters (`\n`) into `<br>` tags so that the note body maintains its original formatting in HTML.
+ * - Renders:
+ *   - A close button that triggers `closeOverlay()`.
+ *   - A headline (`<h1>`) with the note's title.
+ *   - A paragraph (`<p>`) with the formatted note content.
+ *   - A timestamp indicating when the note was created.
+ *   - Action buttons for:
+ *     - Editing the note via `openNoteEditFromDetails(id)`
+ *     - Archiving the note via `changeCategoryFromDetails(id, 'archive')`
+ *     - Moving the note to trash via `changeCategoryFromDetails(id, 'trash')`
+ * - `noBubble(event)` is used to prevent click event propagation from buttons to parent containers.
  *
- * The `noBubble(event)` function is used to stop event propagation from button clicks.
+ * Notes:
+ * - This function is intended for displaying notes in a modal or overlay-like context.
+ * - Does not provide editing capability directly — instead it delegates to editing functions when buttons are clicked.
  */
 function notesOpen(myNotes) {
   let escapedContent = escapeHTML(myNotes.content).replace(/\n/g, "<br>");
