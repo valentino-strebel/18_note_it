@@ -5,9 +5,9 @@
  * @async
  * @returns {Promise<void>}
  */
-async function renderNewNote() {
+async function renderNewNote(myTitle, myContent) {
   toggleClass(overlay, "d_none");
-  const noteCreated = await prepareNewNote();
+  let noteCreated = await prepareNewNote(myTitle, myContent);
   if (noteCreated) {
     deleteNoteInput();
     renderNotes();
@@ -21,8 +21,8 @@ async function renderNewNote() {
  * @async
  * @returns {Promise<boolean>} - Returns true if note was successfully created, false otherwise.
  */
-async function prepareNewNote() {
-  let noteData = await newNoteData();
+async function prepareNewNote(myTitle, myContent) {
+  let noteData = await newNoteData(myTitle, myContent);
   if (!noteData) {
     showErrorMessage();
     return false;
@@ -38,13 +38,13 @@ async function prepareNewNote() {
  * @async
  * @returns {Promise<Object|undefined>} - Returns an object with note title and content, or undefined if invalid.
  */
-async function newNoteData() {
-  let title = getNoteInput(noteTitle);
-  let content = getNoteInput(noteContent);
-  if (!checkInputValue(title, content)) {
+async function newNoteData(myTitle, myContent) {
+  let inputTitle = getNoteInput(myTitle);
+  let inputContent = getNoteInput(myContent);
+  if (!checkInputValue(inputTitle, inputContent)) {
     return;
   }
-  return { noteTitle: title, noteContent: content };
+  return { noteTitle: inputTitle, noteContent: inputContent };
 }
 
 /**
@@ -54,8 +54,8 @@ async function newNoteData() {
  * @param {string} content - The input value for the note content.
  * @returns {boolean} - True if both inputs are valid, false otherwise.
  */
-function checkInputValue(title, content) {
-  return title !== "" && content !== "";
+function checkInputValue(inputContent, inputContent) {
+  return inputContent !== "" && inputContent !== "";
 }
 
 /**

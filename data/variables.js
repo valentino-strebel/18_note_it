@@ -39,6 +39,10 @@ let overlayContent = null;
 
 let div = null;
 
+let noteTitleMobile = null;
+
+let noteContentMobile = null;
+
 /**
  * Initializes global DOM element references by querying the document.
  * This must be called before using any of the global DOM-related variables.
@@ -61,4 +65,9 @@ function setVariables() {
   createButton = getDivId("createButton");
   errorNote = getDivId("errorMessageNote");
   errorTitle = getDivId("errorMessageTitle");
+}
+
+function setVariablesMobile() {
+  noteTitleMobile = getDivId("titleMobile");
+  noteContentMobile = getDivId("contentMobile");
 }

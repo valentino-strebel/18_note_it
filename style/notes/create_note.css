@@ -52,10 +52,12 @@
 
 .createButtonMobileContainer {
   display: none;
+  align-items: center;
+  justify-content: flex-start;
+  height: 75px;
 }
 
-.createButtonContainer button,
-.createButtonMobileContainer button {
+.createButton {
   width: fit-content;
   border-radius: 6px;
   background-color: #007bff;
@@ -66,26 +68,22 @@
   border-style: none;
 }
 
-.createButtonContainer button:hover,
-.createButtonMobileContainer button:hover {
+.createButton:hover {
   background: #155ee3;
   box-shadow: 0 2px 6px rgba(30, 111, 255, 0.2);
 }
 
-.createButtonContainer button:active,
-.createButtonMobileContainer button:active {
+.createButton:active {
   background: #0c4dc1;
   transform: scale(0.98);
 }
 
-.createButtonContainer button:disabled,
-.createButtonMobileContainer button:disabled {
+.createButton:disabled {
   background-color: grey;
   cursor: not-allowed;
 }
 
-.createButtonContainer button:disabled:active,
-.createButtonMobileContainer button:disabled:active {
+.createButton:disabled:active {
   transform: none;
 }
 
@@ -115,8 +113,5 @@
 
   .createButtonMobileContainer {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 75px;
   }
 }

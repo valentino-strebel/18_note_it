@@ -1,0 +1,47 @@
+.createNoteMobile {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f9fbfe;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.createNoteMobile input,
+.createNoteMobile textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.createNoteMobile input {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.createNoteMobile textarea {
+  resize: none;
+  width: 100%;
+  height: 250px;
+}
+
+.createNoteMobile input:hover,
+.createNoteMobile textarea:hover {
+  border-color: #93c5fd;
+}
+
+.createNoteMobile input:focus,
+.createNoteMobile textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.createNoteMobile input:focus::placeholder,
+.createNoteMobile textarea:focus::placeholder {
+  color: transparent;
+}

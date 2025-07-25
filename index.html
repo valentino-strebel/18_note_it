@@ -18,6 +18,7 @@
     <script src="./notes/showNote.js"></script>
     <script src="./notes/editNote.js"></script>
     <script src="./notes/openNote.js"></script>
+    <script src="./notes/createNoteMobile.js"></script>
 
     <script src="./templates/notes_displayed.template.js"></script>
     <script src="./templates/notes_archive.template.js"></script>
@@ -26,6 +27,7 @@
     <script src="./templates/notes_edit.template.js"></script>
     <script src="./templates/notes_open.template.js"></script>
     <script src="./templates/notes_active.template.js"></script>
+    <script src="./templates/notes_create_mobile.template.js"></script>
 
     <link rel="stylesheet" href="style.css" />
 
@@ -34,6 +36,7 @@
     <link rel="stylesheet" href="./style/notes/create_note.css" />
     <link rel="stylesheet" href="./style/notes/notes_edit.css" />
     <link rel="stylesheet" href="./style/notes/notes_open.css" />
+    <link rel="stylesheet" href="./style/notes/create_note_mobile.css" />
 
     <link rel="stylesheet" href="./style/sidebar.css" />
     <link rel="stylesheet" href="./style/header.css" />
@@ -58,11 +61,15 @@
           <p id="errorMessageNote" class="d_none">*Enter a Note</p>
         </div>
         <div class="createButtonContainer">
-          <button id="createButton" onclick="renderNewNote()">Create</button>
+          <button id="createButton" class="createButton" onclick="renderNewNote(noteTitle, noteContent)">
+            Create
+          </button>
         </div>
       </section>
       <div class="createButtonMobileContainer">
-        <button>Create new Note</button>
+        <button id="createButtonMobile" class="createButton" onclick="openMobileCreateInterface()">
+          Create new Note
+        </button>
       </div>
       <main>
         <div class="sidebar">

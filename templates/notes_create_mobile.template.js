@@ -1,5 +1,9 @@
 function createNoteMobile() {
-  return ` <section class="createNote">
+  return `
+    <div class="createNoteMobile">
+      <div class="noteButtons" onclick="noBubble(event)">
+        <button title="Close without saving" class="close" onclick="closeOverlay()"></button>
+      </div>
       <input id="titleMobile" type="text" placeholder="Title" onfocus="removeErrorMessage()" />
       <div class="errorMessage">
         <p id="errorMessageTitleMobile" class="d_none">*Enter a Title</p>
@@ -9,8 +13,10 @@ function createNoteMobile() {
         <p id="errorMessageNoteMobile" class="d_none">*Enter a Note</p>
       </div>
       <div class="createButtonContainer">
-        <button id="createButtonMobile" onclick="renderNewNote()">Create</button>
+        <button class="createButton" onclick="renderNewNoteMobile(noteTitleMobile, noteContentMobile)">
+          Create
+        </button>
       </div>
-    </section>
-    ;`;
+    </div>
+  `;
 }
