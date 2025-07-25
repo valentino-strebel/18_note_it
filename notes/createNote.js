@@ -9,7 +9,7 @@ async function renderNewNote(myTitle, myContent) {
   toggleClass(overlay, "d_none");
   let noteCreated = await prepareNewNote(myTitle, myContent);
   if (noteCreated) {
-    deleteNoteInput();
+    deleteNoteInput(noteTitle, noteContent);
     renderNotes();
   }
   toggleClass(overlay, "d_none");
@@ -71,9 +71,9 @@ function getNoteInput(inputElement) {
 /**
  * Clears the input fields for note title and content.
  */
-function deleteNoteInput() {
-  noteTitle.value = "";
-  noteContent.value = "";
+function deleteNoteInput(myTitle, myContent) {
+  myTitle.value = "";
+  myContent.value = "";
 }
 
 /**

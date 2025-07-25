@@ -43,6 +43,12 @@ let noteTitleMobile = null;
 
 let noteContentMobile = null;
 
+let errorTitleMobile = null;
+
+let errorNoteMobile = null;
+
+let createButtonMobile = null;
+
 /**
  * Initializes global DOM element references by querying the document.
  * This must be called before using any of the global DOM-related variables.
@@ -70,4 +76,7 @@ function setVariables() {
 function setVariablesMobile() {
   noteTitleMobile = getDivId("titleMobile");
   noteContentMobile = getDivId("contentMobile");
+  errorNoteMobile = getDivId("errorMessageNoteMobile");
+  errorTitleMobile = getDivId("errorMessageTitleMobile");
+  createButtonMobile = getDivId("createButtonMobile");
 }
