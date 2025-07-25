@@ -1,3 +1,19 @@
+/**
+ * Generates the HTML markup string for the mobile note creation interface.
+ *
+ * Includes:
+ * - Close button
+ * - Title input with error message
+ * - Note textarea with error message
+ * - Create button
+ *
+ * The HTML includes inline event handlers for:
+ * - Preventing event bubbling
+ * - Removing error messages on focus
+ * - Submitting the note via `renderNewNoteMobile`
+ *
+ * @returns {string} - The HTML string for the mobile note creation form.
+ */
 function createNoteMobile() {
   return `
     <div class="createNoteMobile">
