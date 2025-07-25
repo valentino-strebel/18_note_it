@@ -73,6 +73,18 @@ function setVariables() {
   errorTitle = getDivId("errorMessageTitle");
 }
 
+/**
+ * Initializes global DOM element references for the mobile note creation form.
+ *
+ * Sets the following variables (assumed to be defined in the global scope):
+ * - `noteTitleMobile`: The input element for the note title.
+ * - `noteContentMobile`: The textarea element for the note content.
+ * - `errorNoteMobile`: The paragraph element for the note content error message.
+ * - `errorTitleMobile`: The paragraph element for the title error message.
+ * - `createButtonMobile`: The button element used to submit the note.
+ *
+ * Assumes that all elements exist in the DOM and are uniquely identified by their IDs.
+ */
 function setVariablesMobile() {
   noteTitleMobile = getDivId("titleMobile");
   noteContentMobile = getDivId("contentMobile");
